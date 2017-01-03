@@ -14,6 +14,18 @@ class Database {
 			die("Connection Failed: ". mysqli_error());
 		}
 	}
+
+	public function query($sql){
+		$result= mysqli_query($this->connection, $sql);
+		
+		return $result;
+	}
+
+	public function confirm_query($result){
+		if(!$result){
+			die("Query Failed");
+		}
+	}
 }
 
 $database = new Database();
