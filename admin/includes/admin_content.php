@@ -8,9 +8,14 @@
                             <small>Subheading</small>
                         </h1>
 
-                        <?php if($database->connection){
-                            echo "true";
-                            } 
+                        <?php 
+                                                       
+
+                            /*FIND USER BY ID */
+                            $result_set = User::find_user_by_id(2);                             
+                            $objuser = User::instantiation($result_set);                            
+                            echo $objuser->id;
+                     
                         ?>
 
 
