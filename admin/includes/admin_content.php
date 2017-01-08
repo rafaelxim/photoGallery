@@ -8,14 +8,26 @@
                             <small>Subheading</small>
                         </h1>
 
-                        <?php 
-                                                       
+                        <?php
 
-                            /*FIND USER BY ID */
-                            $result_set = User::find_user_by_id(2);                             
-                            $objuser = User::instantiation($result_set);                            
-                            echo $objuser->id;
-                     
+                        /*$users= User::find_all_users();                            
+                        foreach ($users as $user) {
+                        echo $user->username. "<br>";
+                        }*/
+
+                        /*FIND USER BY ID */
+                        /*$result_set = User::find_user_by_id(2);                             
+                        $objuser = User::instantiation($result_set);                            
+                        echo $objuser->id;*/
+
+                        $user = new User();
+                        
+                        $user->id = 9;
+
+                        $user->delete();
+
+
+
                         ?>
 
 
