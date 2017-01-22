@@ -10,7 +10,10 @@
 
                         <?php
 
-                        /*$users= User::find_all_users();                            
+                        $user = User::find_by_id(10);
+                        echo $user->username;
+
+                        /*$users= User::find_all();                            
                         foreach ($users as $user) {
                         echo $user->username. "<br>";
                         }*/
@@ -20,13 +23,29 @@
                         $objuser = User::instantiation($result_set);                            
                         echo $objuser->id;*/
 
-                        $user = new User();
+                        /*$user = new User();
+                        $user->username = "Cana";
+                        $user->first_name = "João";
+                        $user->last_name = "Canalha";
+                        $user->password = "7";
+                        //$user->id =12 ; 
+                        $user->create();*/
+
+                        /*$photos = Photo::find_all();
+                        foreach ($photos as $photo) {
+                            echo $photo->title;
+                        }*/
+
+                        /*$photo = new Photo();
+                        $photo->title = "Cana da Boa";
+                        $photo->description = "Caninha da Roça exportada da região noroeste da Venezuela";
+                        $photo->size = 200;
+                        $photo->type = "jpeg";
+                        $photo->filename = "cana.jpeg";
                         
-                        $user->id = 9;
+                        $photo->create();*/
 
-                        $user->delete();
-
-
+                        echo INCLUDE_PATH;
 
                         ?>
 
