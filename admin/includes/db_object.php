@@ -31,6 +31,9 @@ class Db_object {
 
 	}
 
+
+
+
 	//Instancia o resultado de uma fetch_array, criando um objeto com os atributos setados.
 	public static function instantiation($the_record){
 
@@ -130,7 +133,16 @@ class Db_object {
 		(isset($this->id)) ? $this->update() : $this->create();
 	}
 
-	
+	public static function count_all(){
+
+		global $database;
+		$sql = "SELECT COUNT(*) FROM ".static::$db_table;
+		$result_set = $database->query($sql);
+		$row = mysqli_fetch_array($result_set);
+
+		return array_shift($row);
+
+	} 
 	
 }// class bracket
 

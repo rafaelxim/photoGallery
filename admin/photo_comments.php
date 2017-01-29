@@ -3,8 +3,12 @@ if(!$session->is_signed_in()){
     redirect("login.php");
 }
 
+if(empty($_GET['id'])){
 
-$users = User::find_all();
+    redirect("photos.php");
+}
+
+$comments = Comment::find_comments($_GET['id']);
 
 ?>
         <!-- Navigation -->
@@ -22,40 +26,27 @@ $users = User::find_all();
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Users                                
+                                Comments                                
                             </h1>
-                            <a class="btn btn-primary" href="add_user.php">Add User</a>
-                            
+                                                        
                             <div class="col-md-12">
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Photo</th>
-                                            <th>Username</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
+                                            <th>Author</th>
+                                            <th>Comment</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
-                                        foreach ($users as $user){
+                                        foreach ($comments as $comment){
                                             echo "<tr>
-                                                    <td>{$user->id}</td>
-                                                    <td>
-                                                        <img class='admin_user_thumbnail user_image' src='{$user->image_path_and_placeholder()}'>
-                                                        
+                                                    <td>{$comment->id}</td>
+                                                    <td>{$comment->author}</td>
+                                                    <td>{$comment->body}
+                                                    <p><a href='delete_photo_comment.php?id={$comment->id}&photo_id={$_GET["id"]}'>Delete Comment</a> </p>
                                                     </td>
-                                                    
-                                                    <td>{$user->username}
-                                                    <div class='pictures_link'>
-                                                            <a href= 'delete_user.php?id={$user->id}'> Delete </a>
-                                                            <a href= 'edit_user.php?id={$user->id}'> Edit</a>
-                                                            
-                                                    </div>
-                                                    </td>
-                                                    <td>{$user->first_name}</td>
-                                                    <td>{$user->last_name} </td>
                                                 </tr>";
                                         } 
                                         ?>

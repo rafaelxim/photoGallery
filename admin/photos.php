@@ -35,6 +35,7 @@ $photos = Photo::find_all();
                                             <th>Filename</th>
                                             <th>Title</th>
                                             <th>Size</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,16 +44,25 @@ $photos = Photo::find_all();
                                             echo "<tr>
                                                     <td>
                                                         <img class='admin_photo_thumbnail' src='{$photo->picture_path()}'>
-                                                        <div class='pictures_link'>
+                                                        <div class='action_links'>
                                                             <a href= 'delete_photo.php?id={$photo->id}'> Delete </a>
                                                             <a href= 'edit_photo.php?id={$photo->id}'> Edit</a>
-                                                            <a href= '#'> View</a>
+                                                            <a href= '../photo.php?id={$photo->id}'> View</a>
                                                         </div>
                                                     </td>
                                                     <td>{$photo->id}</td>
                                                     <td>{$photo->filename}</td>
                                                     <td>{$photo->title}</td>
                                                     <td>{$photo->size} </td>
+                                                    <td>";
+                                                    $comments = Comment::find_comments($photo->id);
+                                                    $qt_comments = count($comments);
+
+                                                    echo "<a href='photo_comments?id={$photo->id}' class='btn btn-primary' type='button'>
+                                                      Comments <span class='badge'>{$qt_comments}</span>
+                                                    </a>";
+
+                                                   echo "</td>
                                                 </tr>";
                                         } 
                                         ?>

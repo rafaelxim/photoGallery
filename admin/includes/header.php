@@ -37,6 +37,9 @@ require_once("init.php");
 
     <!-- Styles CSS -->
     <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Google Chart PIE -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  
 </head>
 

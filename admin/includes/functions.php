@@ -1,5 +1,5 @@
 <?php
-function classAutoLoader($class)
+/*function classAutoLoader($class)
 {
     $class = strtolower($class);
     $path  = "includes/{$class}.php";
@@ -9,11 +9,11 @@ function classAutoLoader($class)
     } else {
         die("You need to declare {$class}.php ");
     }
-}
+}*/
 function redirect($location)
 {
     header("Location: {$location}");
 }
-
-spl_autoload_register("classAutoLoader");
+/*
+spl_autoload_register("classAutoLoader");*/
 ?>
