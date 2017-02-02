@@ -45,6 +45,8 @@ if(!$session->is_signed_in()){
 
         <div id="page-wrapper">
             <div class="container-fluid">
+                
+                <?php include('includes/photo_library_modal.php'); ?>
 
                     <!-- Page Heading -->
                     <div class="row">
@@ -55,7 +57,7 @@ if(!$session->is_signed_in()){
                             </h1>
                                 <form action="" method="post" enctype="multipart/form-data">   
                                     <div class="col-md-6">
-                                        <img class="img-responsive" src="<?=$image?> ">
+                                        <a data-toggle="modal" data-target="#photo-modal" href=""><img class="img-responsive" src="<?=$image?> "></a>
                                     </div> 
 
                                     <div class="col-md-6"> 
@@ -79,7 +81,7 @@ if(!$session->is_signed_in()){
                                             <input type="password" value="<?=$password?>" name="password" class="form-control">
                                         </div>                                        
                                           <input type="submit" name="update" class="btn btn-primary" value="Update">
-                                          <a class="btn btn-danger" href="delete_user.php?id=<?=$user_object->id?>">Delete</a>
+                                          <a id="user-id" class="btn btn-danger" href="delete_user.php?id=<?=$user_object->id?>">Delete</a>
                                     </div>
                             </form>
                         </div>

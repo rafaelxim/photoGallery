@@ -9,7 +9,7 @@
 
 	<!-- Editor tynimce -->
   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script>
+  
 
   <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -35,7 +35,8 @@
 
         chart.draw(data, options);
       }
-    </script>
+    </script>    
+    <script src="../admin/js/script.js" ></script>
 
 </body>
 

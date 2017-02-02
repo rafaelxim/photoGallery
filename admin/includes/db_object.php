@@ -141,7 +141,6 @@ class Db_object {
 		$row = mysqli_fetch_array($result_set);
 
 		return array_shift($row);
-
 	} 
 	
 }// class bracket

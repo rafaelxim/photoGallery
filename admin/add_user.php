@@ -10,10 +10,12 @@ if(!$session->is_signed_in()){
     $user_object->first_name = $_POST["first_name"];
     $user_object->last_name = $_POST["last_name"];
     $user_object->password = $_POST["password"];
+
     
     $user_object->set_file($_FILES["user_image"]);
+    $user_object->upload_photo();
 
-    $user_object->save_user_and_image();
+    $user_object->save();
 
   }
         
