@@ -20,7 +20,8 @@ $(document).ready(function(){
     $("#set_user_image").click(function(){
        
        $.ajax({
-          url: "includes/ajax_code.php" 
+          url: "includes/ajax_code.php" ,
+          
            
        });
        
