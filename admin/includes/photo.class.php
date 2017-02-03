@@ -103,6 +103,17 @@ class Photo extends Db_object
 		}
 	}
 
+	public function show_photo_details($photo_id){
+
+		
+		$photo = Photo::find_by_id($photo_id);
+		
+		echo      "<p>Filename: {$photo->filename}</p>
+				   <p>Type: {$photo->type}</p>
+				   <p>Size: {$photo->size}</p>";
+
+	}
+
 }//class End
 
  ?>

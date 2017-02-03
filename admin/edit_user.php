@@ -56,7 +56,7 @@ if(!$session->is_signed_in()){
                                 <small>Edit User</small>
                             </h1>
                                 <form action="" method="post" enctype="multipart/form-data">   
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 user_image_box">
                                         <a data-toggle="modal" data-target="#photo-modal" href=""><img class="img-responsive" src="<?=$image?> "></a>
                                     </div> 
 
