@@ -16,6 +16,11 @@ if(!$session->is_signed_in()){
     $user_object->upload_photo();
 
     $user_object->save();
+    $msg = "<div class='alert alert-success'>
+                <strong>Success !! </strong> User added.
+              </div>" ; 
+    $session->message($msg);
+    redirect("users.php");
 
   }
         

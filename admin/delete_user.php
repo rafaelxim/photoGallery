@@ -15,6 +15,11 @@ $user = User::find_by_id($_GET["id"]);
 if($user){
 
 	$user->delete();
+        $msg = "<div class='alert alert-danger'>
+                <strong>Deleted!</strong> User deleted.
+              </div>";
+        $session->message($msg);
+        
 	redirect("users.php");
 }else{
 	redirect("users.php");

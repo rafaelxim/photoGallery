@@ -21,6 +21,7 @@ $photos = Photo::find_all();
                     <!-- Page Heading -->
                     <div class="row">
                         <div class="col-lg-12">
+                            <?=$session->message; ?> 
                             <h1 class="page-header">
                                 Photos
                                 

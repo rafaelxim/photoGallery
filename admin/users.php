@@ -21,6 +21,7 @@ $users = User::find_all();
                     <!-- Page Heading -->
                     <div class="row">
                         <div class="col-lg-12">
+                            <p><?=$session->message ?> </p>
                             <h1 class="page-header">
                                 Users                                
                             </h1>

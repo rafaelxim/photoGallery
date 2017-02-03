@@ -2,6 +2,13 @@
 
 $(document).ready(function(){  
     
+            $(".info-box-header").click(function(){
+               
+               $(".inside").slideToggle();
+               $("#toggle").toggleClass("glyphicon-menu-down glyphicon , glyphicon-menu-up glyphicon");
+                
+            });
+    
     tinymce.init({ selector:'textarea'});
     
     $(".modal_thumbnails").click(function(){

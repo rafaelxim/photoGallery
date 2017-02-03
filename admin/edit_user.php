@@ -12,6 +12,7 @@ if(!$session->is_signed_in()){
     $user_object->first_name = $_POST['first_name'];
     $user_object->last_name = $_POST['last_name'];
     $user_object->password = $_POST['password'];
+    
 
     if(empty($_FILES["user_image"])){
       $user_object->save();
@@ -20,7 +21,13 @@ if(!$session->is_signed_in()){
       $user_object->set_file($_FILES["user_image"]);
       $user_object->upload_photo();  
       $user_object->save();  
+      $msg = "<div class='alert alert-success'>
+                <strong>Success!</strong> The user has been saved.
+              </div>";
+      $session->message($msg);
     }    
+    
+    redirect("users.php");
   }
 
   if(isset($_GET["id"])){    
